@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "586556044956",
+    "project_id": "supreme-826a9",
+    "storage_bucket": "supreme-826a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586556044956:android:95089f9d4a7cc2581f1f59",
+        "android_client_info": {
+          "package_name": "com.triare.supreme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586556044956-627hgg4et3adf0ei0p58990uh260qopn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpmctwQlLAbOd7GeADHubUacMzSjzZHQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586556044956-627hgg4et3adf0ei0p58990uh260qopn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
