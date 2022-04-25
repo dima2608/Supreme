@@ -9,6 +9,6 @@
     <string name="read_more">Read More</string>
     <string name="standings">Standings</string>
     <string name="drivers">Drivers</string>
-    <string name="upcoming">upcoming</string>
-    <string name="previous">previous</string>
+    <string name="upcoming">UPCOMING</string>
+    <string name="previous">PREVIOUS</string>
 </resources>

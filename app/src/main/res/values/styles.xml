@@ -94,4 +94,12 @@
         <item name="cardBackgroundColor">@color/gray</item>
         <item name="cardCornerRadius">16dp</item>
     </style>
+
+    <!-- Card view -->
+    <style name="Widget.App.TabLayout" parent="Widget.Material3.TabLayout">
+        <item name="tabTextColor">@drawable/tabs_selector</item>
+        <item name="tabTextAppearance">@style/TextAppearance.MdcTypographyStyles.Body2</item>
+        <item name="tabIndicatorColor">@drawable/tabs_selector</item>
+        <item name="textAllCaps">true</item>
+    </style>
 </resources>

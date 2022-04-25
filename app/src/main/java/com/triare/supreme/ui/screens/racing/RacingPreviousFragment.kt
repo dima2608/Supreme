@@ -1,4 +1,4 @@
-package com.triare.supreme.ui.screens.standings
+package com.triare.supreme.ui.screens.racing
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.triare.supreme.R
 
-class StandingsFragment : Fragment() {
+class RacingPreviousFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,12 +18,11 @@ class StandingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_standings, container, false)
+        return inflater.inflate(R.layout.fragment_racing_previous, container, false)
     }
 
     companion object {
         @JvmStatic
-        fun newInstance() = StandingsFragment()
-
+        fun newInstance() = RacingPreviousFragment()
     }
 }
