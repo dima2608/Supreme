@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/newsFragment">
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.triare.supreme.ui.screens.news.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_racingFragment"
+            app:destination="@id/racingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/racingFragment"
+        android:name="com.triare.supreme.ui.screens.racing.RacingFragment"
+        android:label="fragment_racing"
+        tools:layout="@layout/fragment_racing" >
+        <action
+            android:id="@+id/action_racingFragment_to_standingsFragment"
+            app:destination="@id/standingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/standingsFragment"
+        android:name="com.triare.supreme.ui.screens.standings.StandingsFragment"
+        android:label="fragment_standings"
+        tools:layout="@layout/fragment_standings" />
+</navigation>

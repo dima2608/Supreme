@@ -6,7 +6,15 @@
         <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/drawable/bottom_nav_selector.xml" value="0.103" />
         <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/drawable/ic_news.xml" value="0.225" />
         <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/drawable/ic_standings.xml" value="0.1" />
-        <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/layout/activity_main.xml" value="0.19736842105263158" />
+        <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/font/oxanium.xml" value="0.396875" />
+        <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/font/oxanium_bold.xml" value="0.396875" />
+        <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/font/oxanium_semibold.xml" value="0.396875" />
+        <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/layout/fragment_news.xml" value="0.33" />
+        <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/layout/fragment_racing.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/layout/fragment_standings.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/layout/item_news.xml" value="0.33" />
+        <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/layout/item_standings.xml" value="0.22" />
         <entry key="..\:/Users/August/AndroidStudioProjects/Supreme/app/src/main/res/menu/bottom_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
