@@ -6,6 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.triare.supreme.data.api.model.RacingDto
+import com.triare.supreme.data.api.model.StandingsApiDto
+import com.triare.supreme.data.models.StandingsDto
 import com.triare.supreme.data.repository.RacingRepository
 import com.triare.supreme.ui.dvo.RacingDvo
 import kotlinx.coroutines.Dispatchers
@@ -28,12 +30,11 @@ class RacingViewModel : ViewModel() {
             if (currentRaces.isSuccessful) {
                 currentRaces.body()?.let { addRaces(it) }
             }
-
         }
     }
 
-    private fun addRaces(data: RacingDto) {
-        racingRepo.addRaces(data)
+    private fun addRaces(data: StandingsApiDto) {
+
     }
 
     fun observeUpcomingRaces() {

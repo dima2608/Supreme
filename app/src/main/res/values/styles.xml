@@ -21,9 +21,9 @@
     </style>
 
     <style name="TextAppearance.MdcTypographyStyles.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
-        <item name="fontFamily">@font/oxanium</item>
-        <item name="android:fontFamily">@font/oxanium</item>
-        <item name="android:textSize">49sp</item>
+        <item name="fontFamily">@font/oxanium_semibold</item>
+        <item name="android:fontFamily">@font/oxanium_semibold</item>
+        <item name="android:textSize">40sp</item>
     </style>
 
     <style name="TextAppearance.MdcTypographyStyles.Headline4" parent="TextAppearance.MaterialComponents.Headline4">

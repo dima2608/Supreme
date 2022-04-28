@@ -3,6 +3,7 @@ package com.triare.supreme.data.mapper
 import com.google.firebase.storage.FirebaseStorage
 import com.triare.supreme.data.models.RaceDto
 import com.triare.supreme.ui.dvo.RacingDvo
+import com.triare.supreme.utils.DateUtils
 
 class RacingMapper(private val racingDto: List<RaceDto>) {
 
@@ -11,7 +12,7 @@ class RacingMapper(private val racingDto: List<RaceDto>) {
             RacingDvo(
                 it.circuitId.orEmpty(),
                 "round ${it.round}",
-                "7.7.7777",
+                DateUtils.parseDate(it.date!!.toDate()),
                 it.country.orEmpty(),
                 it.circuitName.orEmpty(),
                 "laps ${it.laps}",

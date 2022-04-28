@@ -88,6 +88,4 @@ class RacingAdapter(private val context: Context) :
                 .into(img)
         }
     }
-
-
 }

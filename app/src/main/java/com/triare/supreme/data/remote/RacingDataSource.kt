@@ -4,8 +4,10 @@ import android.util.Log
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import com.triare.supreme.data.api.model.StandingsApiDto
 import com.triare.supreme.data.mapper.RacingMapper
 import com.triare.supreme.data.models.RaceDto
+import com.triare.supreme.data.models.StandingsDto
 import com.triare.supreme.ui.dvo.RacingDvo
 import java.util.*
 
@@ -15,24 +17,22 @@ class RacingDataSource {
     private val db = FirebaseFirestore.getInstance()
     private val storage = FirebaseStorage.getInstance()
     private val race = db.collection(RACING_COLLECTION)
+    private val sta = db.collection("standings")
 
-    /*
-    fun addRaces(data: RacingDto) {
-        data.mRData.raceTable.races.forEach {
-            val pushedData = RaceDto(
-                it.circuit.circuitId,
-                "",
-                it.round,
-                it.date,
-                it.circuit.circuitName,
-                it.circuit.Location.country,
+
+    fun addStandings(data: StandingsApiDto) {
+        data.mRData?.standingsTable?.standingsLists?.get(0)?.driverStandings?.forEach {
+            val pushedData = StandingsDto(
+                it?.position?.toInt(),
+                it?.driver?.driverId,
+                it?.driver?.givenName,
+                it?.driver?.familyName,
+                it?.driver?.permanentNumber,
                 ""
             )
-            news.document().set(pushedData)
+            sta.document().set(pushedData)
         }
     }
-
-     */
 
     fun observeUpcomingRaces(onResult: (Result<List<RacingDvo>>) -> Unit) {
         race.whereGreaterThan("date", date).addSnapshotListener { value, error ->

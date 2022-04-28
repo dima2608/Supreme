@@ -14,10 +14,12 @@
         <ImageView
             android:id="@+id/standings_team_img"
             android:layout_width="0dp"
-            android:layout_height="143dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:ignore="ContentDescription"
             tools:src="@tools:sample/avatars" />
 
@@ -27,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="20dp"
-            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Headline4"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Headline3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="44" />
@@ -38,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/standings_driver_number"
             tools:text="Lewis" />
@@ -48,7 +50,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:paddingBottom="20dp"
             android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/standings_driver_name"
             tools:text="Hamilton" />
