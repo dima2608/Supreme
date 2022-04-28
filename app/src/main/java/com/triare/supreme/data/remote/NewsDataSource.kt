@@ -2,6 +2,7 @@ package com.triare.supreme.data.remote
 
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import com.triare.supreme.data.mapper.NewsMapper
 import com.triare.supreme.data.models.NewsDto
 import com.triare.supreme.ui.dvo.NewsDvo
@@ -9,10 +10,11 @@ import com.triare.supreme.ui.dvo.NewsDvo
 class NewsDataSource {
 
     private val db = FirebaseFirestore.getInstance()
-    private val cities = db.collection(NEWS_COLLECTION)
+    private val storage = FirebaseStorage.getInstance()
+    private val news = db.collection(NEWS_COLLECTION)
 
     fun observeCities(onResult: (Result<List<NewsDvo>>) -> Unit) {
-        cities.addSnapshotListener { value, error ->
+        news.addSnapshotListener { value, error ->
             if (error != null) {
                 Log.w(TAG, "Listen failed.", error)
                 onResult(Result.failure(error))
@@ -23,7 +25,7 @@ class NewsDataSource {
                 try {
                     val news = value.toObjects(NewsDto::class.java)
                     Log.d("NewsImg", news[0].title.orEmpty())
-                    onResult(Result.success(NewsMapper(news).map()))
+                    onResult(Result.success(NewsMapper(news).map(storage)))
                 } catch (e: Exception) {
                     e.printStackTrace()
                     onResult(Result.failure(e))

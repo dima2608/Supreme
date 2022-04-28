@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.App.CardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/racing_img"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@id/racing_laps"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/racing_round"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/racing_round"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            app:layout_constraintStart_toEndOf="@+id/racing_img"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="round 8" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/red"
+            app:layout_constraintBottom_toBottomOf="@+id/racing_date"
+            app:layout_constraintEnd_toStartOf="@+id/racing_date"
+            app:layout_constraintStart_toEndOf="@+id/racing_round"
+            app:layout_constraintTop_toTopOf="@+id/racing_date" />
+
+        <TextView
+            android:id="@+id/racing_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="12-14 feb, 2022" />
+
+        <TextView
+            android:id="@+id/racing_country_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            android:textColor="@color/red"
+
+            app:layout_constraintEnd_toEndOf="@id/racing_date"
+            app:layout_constraintStart_toStartOf="@+id/racing_round"
+            app:layout_constraintTop_toBottomOf="@id/racing_round"
+            tools:text="United States" />
+
+        <TextView
+            android:id="@+id/racing_circle_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            app:layout_constraintEnd_toEndOf="@id/racing_date"
+            app:layout_constraintStart_toStartOf="@id/racing_country_name"
+            app:layout_constraintTop_toBottomOf="@id/racing_country_name"
+            tools:text="Autodromo Hermanos Rodrigues" />
+
+        <TextView
+            android:id="@+id/racing_laps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/racing_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/racing_circle_name"
+            tools:text="63 laps" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="45dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="141dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

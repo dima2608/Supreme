@@ -1,6 +1,5 @@
 package com.triare.supreme.data.repository
 
-import com.triare.supreme.data.models.NewsDto
 import com.triare.supreme.data.remote.NewsDataSource
 import com.triare.supreme.ui.dvo.NewsDvo
 

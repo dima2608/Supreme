@@ -36,6 +36,10 @@ class NewsFragment : Fragment() {
     }
 
     private fun initUi() {
+        initRecycler()
+    }
+
+    private fun initRecycler() {
         val newsRecycler = view?.findViewById<RecyclerView>(R.id.recycler_view_news)
         newsRecycler?.apply {
             layoutManager =

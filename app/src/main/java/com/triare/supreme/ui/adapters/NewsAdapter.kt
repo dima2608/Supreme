@@ -1,30 +1,20 @@
 package com.triare.supreme.ui.adapters
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.ktx.storage
 import com.triare.supreme.R
 import com.triare.supreme.ui.dvo.NewsDvo
-import com.triare.supreme.ui.screens.news.NewsFragment
-import kotlin.coroutines.coroutineContext
 
 class NewsAdapter(private val context: Context): RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     private var items: List<NewsDvo> = emptyList()
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsAdapter.NewsViewHolder {
         val itemView = LayoutInflater.from(parent.context)
@@ -81,10 +71,9 @@ class NewsAdapter(private val context: Context): RecyclerView.Adapter<NewsAdapte
             title.text = data.title
             date.text = data.date
 
-            Log.d("RefURL", data.imgLink)
-
             Glide.with(context)
-                .load("gs://supreme-826a9.appspot.com/news/Imola_Lecler_22-04-2022.jpg")
+                .load(data.imgLink)
+                .centerInside()
                 .into(img)
         }
     }

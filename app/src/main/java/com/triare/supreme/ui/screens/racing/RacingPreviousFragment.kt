@@ -5,9 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.triare.supreme.R
+import com.triare.supreme.ui.adapters.RacingAdapter
+import com.triare.supreme.ui.models.RacingViewModel
 
 class RacingPreviousFragment : Fragment() {
+
+    private val racingViewModel by viewModels<RacingViewModel>()
+    private lateinit var racingAdaptor: RacingAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +27,35 @@ class RacingPreviousFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_racing_previous, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initUi()
+        observeUpdates()
+
+    }
+    private fun initUi() {
+        initRecycler()
+    }
+
+    private fun initRecycler() {
+        val racesRecycler = view?.findViewById<RecyclerView>(R.id.recycler_view_racing_previous)
+        racesRecycler?.apply {
+            layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            racingAdaptor = RacingAdapter(context)
+            adapter = racingAdaptor
+        }
+    }
+
+    private fun observeUpdates() {
+        racingViewModel.observePreviousRaces()
+        racingViewModel.racePreviousLiveData.observe(viewLifecycleOwner) {
+            val races = it ?: return@observe
+            racingAdaptor.submitRacingList(races)
+        }
     }
 
     companion object {
