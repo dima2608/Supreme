@@ -95,6 +95,11 @@
         <item name="cardCornerRadius">16dp</item>
     </style>
 
+    <style name="Widget.App.CardView.ShapeAppearance" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+    </style>
+
     <!-- Card view -->
     <style name="Widget.App.TabLayout" parent="Widget.Material3.TabLayout">
         <item name="tabTextColor">@drawable/tabs_selector</item>
@@ -102,4 +107,30 @@
         <item name="tabIndicatorColor">@drawable/tabs_selector</item>
         <item name="textAllCaps">true</item>
     </style>
+    <!-- Divider -->
+    <style name="Divider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:background">@color/red</item>
+    </style>
+    <!-- Divider -->
+    <style name="Km" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">km</item>
+        <item name="android:textAppearance">@style/TextAppearance.MdcTypographyStyles.Subtitle2
+        </item>
+    </style>
+
+    <!-- SeeAll btn -->
+    <style name="SeeAllButton">
+        <item name="android:drawablePadding">6dp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:text">see all</item>
+        <item name="android:textAppearance">@style/TextAppearance.MdcTypographyStyles.Subtitle2
+        </item>
+        <item name="backgroundTint">@color/pages_bg</item>
+        <item name="drawableRightCompat">@drawable/ic_arrow_right</item>
+    </style>
+
 </resources>

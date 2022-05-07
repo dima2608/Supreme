@@ -10,9 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.triare.supreme.R
 import com.triare.supreme.ui.adapters.RacingAdapter
+import com.triare.supreme.ui.dvo.RacingDvo
 import com.triare.supreme.ui.models.RacingViewModel
+import com.triare.supreme.ui.screens.racing.upcoming.UpcomingTabFragment
 
-class RacingPreviousFragment : Fragment() {
+class RacingPreviousFragment : Fragment(), RacingAdapter.OnItemClickListener {
 
     private val racingViewModel by viewModels<RacingViewModel>()
     private lateinit var racingAdaptor: RacingAdapter
@@ -36,6 +38,7 @@ class RacingPreviousFragment : Fragment() {
         observeUpdates()
 
     }
+
     private fun initUi() {
         initRecycler()
     }
@@ -45,7 +48,7 @@ class RacingPreviousFragment : Fragment() {
         racesRecycler?.apply {
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            racingAdaptor = RacingAdapter(context)
+            racingAdaptor = RacingAdapter(context, this@RacingPreviousFragment)
             adapter = racingAdaptor
         }
     }
@@ -56,6 +59,15 @@ class RacingPreviousFragment : Fragment() {
             val races = it ?: return@observe
             racingAdaptor.submitRacingList(races)
         }
+    }
+
+    override fun onItemClick(data: RacingDvo) {
+        val detailsFragment = UpcomingTabFragment.newInstance(data)
+        requireActivity().supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.nav_host_fragment, detailsFragment)
+            .addToBackStack("item")
+            .commit()
     }
 
     companion object {

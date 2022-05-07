@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="16dp"
+    android:background="@color/pages_bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.screens.racing.upcoming.CircuitTabFragment">
+
+        <TextView
+            android:id="@+id/circuit_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:lineSpacingExtra="0.6dp"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Incredibly narrow and totally iconic. Nelson Piquet memorably described driving around Monaco as “like riding a bicycle around your living room”… which is fair. Despite that, it’s a challenge that nearly all drivers love, forcing them to put their skills on the line and rewarding millimetric accuracy. Overtaking on the tight streets is harder, however, with the 2003 Grand Prix witnessing a grand total of zero passing moves!" />
+
+        <ImageView
+            android:id="@+id/circuit_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toBottomOf="@id/circuit_title"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/bg" />
+
+        <View
+            android:id="@+id/race_distance_divider"
+            style="@style/Divider"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/race_distance"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/race_distance_km" />
+
+        <TextView
+            android:id="@+id/race_distance_km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            app:layout_constraintStart_toEndOf="@id/race_distance_divider"
+            app:layout_constraintTop_toBottomOf="@id/circuit_icon"
+            tools:text="100.6" />
+
+        <TextView
+            android:id="@+id/distance_km"
+            style="@style/Km"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/race_distance_km"
+            app:layout_constraintStart_toEndOf="@id/race_distance_km" />
+
+        <TextView
+            android:id="@+id/race_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/race_distance"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            app:layout_constraintStart_toStartOf="@+id/race_distance_km"
+            app:layout_constraintTop_toBottomOf="@id/race_distance_km" />
+
+        <View
+            android:id="@+id/circuit_length_divider"
+            style="@style/Divider"
+            android:layout_marginStart="36dp"
+            app:layout_constraintBottom_toBottomOf="@id/race_distance_divider"
+            app:layout_constraintStart_toEndOf="@id/distance_km"
+            app:layout_constraintTop_toTopOf="@id/race_distance_divider" />
+
+        <TextView
+            android:id="@+id/circuit_length_km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            app:layout_constraintStart_toEndOf="@id/circuit_length_divider"
+            app:layout_constraintTop_toTopOf="@id/circuit_length_divider"
+            tools:text="4.352" />
+
+        <TextView
+            android:id="@+id/c_length_km"
+            style="@style/Km"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/circuit_length_km"
+            app:layout_constraintStart_toEndOf="@id/circuit_length_km" />
+
+        <TextView
+            android:id="@+id/circuit_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/circuit_length"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            app:layout_constraintStart_toStartOf="@id/circuit_length_km"
+            app:layout_constraintTop_toBottomOf="@id/circuit_length_km" />
+
+        <View
+            android:id="@+id/laps_divider"
+            style="@style/Divider"
+            android:layout_marginStart="36dp"
+            app:layout_constraintBottom_toBottomOf="@id/race_distance_divider"
+            app:layout_constraintStart_toEndOf="@id/c_length_km"
+            app:layout_constraintTop_toTopOf="@id/race_distance_divider" />
+
+        <TextView
+            android:id="@+id/laps_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            app:layout_constraintStart_toEndOf="@id/laps_divider"
+            app:layout_constraintTop_toTopOf="@id/laps_divider"
+            tools:text="48" />
+
+        <TextView
+            android:id="@+id/laps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/laps"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            app:layout_constraintStart_toStartOf="@id/laps_num"
+            app:layout_constraintTop_toBottomOf="@id/laps_num" />
+
+        <View
+            android:id="@+id/record_divider"
+            style="@style/Divider"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/lap_record_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/lap_record_min" />
+
+        <TextView
+            android:id="@+id/lap_record_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            app:layout_constraintStart_toEndOf="@id/record_divider"
+            app:layout_constraintTop_toBottomOf="@id/race_distance"
+            tools:text="1.12.368" />
+
+        <TextView
+            style="@style/Km"
+            android:layout_marginStart="4dp"
+            android:text="@string/min"
+            app:layout_constraintBaseline_toBaselineOf="@id/lap_record_min"
+            app:layout_constraintStart_toEndOf="@id/lap_record_min" />
+
+        <TextView
+            android:id="@+id/lap_record_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/lap_record_min"
+            app:layout_constraintTop_toBottomOf="@id/lap_record_min"
+            tools:text="Lap record - Lewis Hamilton (2020)" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

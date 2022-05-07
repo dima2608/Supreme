@@ -4,11 +4,24 @@
     <string name="item_racing">Racing</string>
     <string name="item_standings">Standings</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="top_stories">Top Stories</string>
     <string name="read_more">Read More</string>
     <string name="standings">Standings</string>
     <string name="drivers">Drivers</string>
     <string name="upcoming">UPCOMING</string>
     <string name="previous">PREVIOUS</string>
+    <string name="circuit">CIRCUIT</string>
+    <string name="media">MEDIA</string>
+    <string name="overview">OVERVIEW</string>
+    <string name="stats">STATS</string>
+    <string name="bio">BIO</string>
+    <string name="highlights">HIGHLIGHTS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="race_distance">Race distance</string>
+    <string name="laps">Laps</string>
+    <string name="min">min</string>
+    <string name="news">News</string>
+    <string name="video">Video</string>
+    <string name="circuit_length">Circuit length</string>
 </resources>

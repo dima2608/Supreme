@@ -1,11 +1,10 @@
 package com.triare.supreme.data.repository
 
+import com.google.firebase.firestore.DocumentReference
 import com.triare.supreme.data.api.Rest
-import com.triare.supreme.data.api.model.RacingDto
 import com.triare.supreme.data.api.model.StandingsApiDto
-import com.triare.supreme.data.models.StandingsDto
 import com.triare.supreme.data.remote.RacingDataSource
-import com.triare.supreme.ui.dvo.NewsDvo
+import com.triare.supreme.ui.dvo.CircuitDvo
 import com.triare.supreme.ui.dvo.RacingDvo
 import retrofit2.Response
 
@@ -27,6 +26,10 @@ class RacingRepository {
 
     fun observePreviousRaces(onResult: (Result<List<RacingDvo>>) -> Unit) {
         raceDataSource.observePreviousRaces(onResult)
+    }
+
+    fun observeCircuit(circuitRef: DocumentReference, onResult: (Result<CircuitDvo>) -> Unit) {
+        raceDataSource.observeCircuit(onResult, circuitRef)
     }
 
 }

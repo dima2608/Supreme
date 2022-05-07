@@ -1,20 +1,20 @@
 package com.triare.supreme.ui.screens.racing
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.triare.supreme.R
-import com.triare.supreme.ui.adapters.NewsAdapter
 import com.triare.supreme.ui.adapters.RacingAdapter
-import com.triare.supreme.ui.models.NewsViewModel
+import com.triare.supreme.ui.dvo.RacingDvo
 import com.triare.supreme.ui.models.RacingViewModel
+import com.triare.supreme.ui.screens.racing.upcoming.UpcomingTabFragment
 
-class RacingUpcomingFragment : Fragment() {
+class RacingUpcomingFragment : Fragment(), RacingAdapter.OnItemClickListener {
 
     private val racingViewModel by viewModels<RacingViewModel>()
     private lateinit var racingAdaptor: RacingAdapter
@@ -38,6 +38,7 @@ class RacingUpcomingFragment : Fragment() {
         observeUpdates()
 
     }
+
     private fun initUi() {
         initRecycler()
     }
@@ -47,7 +48,7 @@ class RacingUpcomingFragment : Fragment() {
         racesRecycler?.apply {
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            racingAdaptor = RacingAdapter(context)
+            racingAdaptor = RacingAdapter(context, this@RacingUpcomingFragment)
             adapter = racingAdaptor
         }
     }
@@ -60,8 +61,18 @@ class RacingUpcomingFragment : Fragment() {
         }
     }
 
+    override fun onItemClick(data: RacingDvo) {
+        val detailsFragment = UpcomingTabFragment.newInstance(data)
+        requireActivity().supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.nav_host_fragment, detailsFragment)
+            .addToBackStack("item")
+            .commit()
+    }
+
     companion object {
         @JvmStatic
         fun newInstance() = RacingUpcomingFragment()
     }
+
 }

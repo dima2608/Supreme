@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.triare.supreme.R
 import com.triare.supreme.ui.dvo.RacingDvo
 
-class RacingAdapter(private val context: Context) :
+class RacingAdapter(private val context: Context, private val listener: OnItemClickListener) :
     RecyclerView.Adapter<RacingAdapter.RacingViewHolder>() {
 
     private var items: List<RacingDvo> = emptyList()
@@ -66,7 +66,8 @@ class RacingAdapter(private val context: Context) :
         }
     }
 
-    inner class RacingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class RacingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
 
         private val country = itemView.findViewById<TextView>(R.id.racing_country_name)
         private val date = itemView.findViewById<TextView>(R.id.racing_date)
@@ -74,6 +75,10 @@ class RacingAdapter(private val context: Context) :
         private val trackName = itemView.findViewById<TextView>(R.id.racing_circle_name)
         private val round = itemView.findViewById<TextView>(R.id.racing_round)
         private val laps = itemView.findViewById<TextView>(R.id.racing_laps)
+
+        init {
+            itemView.setOnClickListener(this)
+        }
 
         fun bind(data: RacingDvo) {
 
@@ -87,5 +92,16 @@ class RacingAdapter(private val context: Context) :
                 .load(data.icon)
                 .into(img)
         }
+
+        override fun onClick(v: View?) {
+            val position = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onItemClick(data = items[position])
+            }
+        }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(data: RacingDvo)
     }
 }

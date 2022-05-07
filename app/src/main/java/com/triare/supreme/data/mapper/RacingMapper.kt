@@ -10,13 +10,17 @@ class RacingMapper(private val racingDto: List<RaceDto>) {
     fun map(storage: FirebaseStorage): List<RacingDvo> {
         return racingDto.map {
             RacingDvo(
+                it.circuit,
                 it.circuitId.orEmpty(),
                 "round ${it.round}",
                 DateUtils.parseDate(it.date!!.toDate()),
+                it.highlights,
                 it.country.orEmpty(),
                 it.circuitName.orEmpty(),
                 "laps ${it.laps}",
-                storage.getReferenceFromUrl(it.icon!!)
+                storage.getReferenceFromUrl(it.icon!!),
+                it.media,
+                it.overview
             )
         }
     }

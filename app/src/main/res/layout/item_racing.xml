@@ -63,7 +63,6 @@
             android:layout_marginTop="8dp"
             android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
             android:textColor="@color/red"
-
             app:layout_constraintEnd_toEndOf="@id/racing_date"
             app:layout_constraintStart_toStartOf="@+id/racing_round"
             app:layout_constraintTop_toBottomOf="@id/racing_round"
