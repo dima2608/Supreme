@@ -9,6 +9,7 @@ import com.triare.supreme.data.api.model.StandingsApiDto
 import com.triare.supreme.data.mapper.CircuitMapper
 import com.triare.supreme.data.mapper.RacingMapper
 import com.triare.supreme.data.models.CircuitDto
+import com.triare.supreme.data.models.OverviewDto
 import com.triare.supreme.data.models.RaceDto
 import com.triare.supreme.ui.dvo.CircuitDvo
 import com.triare.supreme.ui.dvo.RacingDvo
@@ -20,7 +21,6 @@ class RacingDataSource {
     private val db = FirebaseFirestore.getInstance()
     private val storage = FirebaseStorage.getInstance()
     private val race = db.collection(RACING_COLLECTION)
-    private val circuit = db.collection(CIRCUIT_COLLECTION)
 
 
     fun addStandings(data: StandingsApiDto) {
@@ -73,6 +73,13 @@ class RacingDataSource {
     fun observeCircuit(onResult: (Result<CircuitDvo>) -> Unit, circuitRef: DocumentReference) {
         db.document(circuitRef.path).get().addOnSuccessListener { value ->
             val circuit = value.toObject(CircuitDto::class.java)
+            onResult(Result.success(CircuitMapper(circuit).map(storage)))
+        }
+    }
+
+    fun observeOverview(onResult: (Result<CircuitDvo>) -> Unit, overviewRef: DocumentReference) {
+        db.document(overviewRef.path).get().addOnSuccessListener { value ->
+            val circuit = value.toObject(OverviewDto::class.java)
             onResult(Result.success(CircuitMapper(circuit).map(storage)))
         }
     }

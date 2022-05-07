@@ -1,10 +1,10 @@
 package com.triare.supreme.ui.screens.racing
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +12,7 @@ import com.triare.supreme.R
 import com.triare.supreme.ui.adapters.RacingAdapter
 import com.triare.supreme.ui.dvo.RacingDvo
 import com.triare.supreme.ui.models.RacingViewModel
-import com.triare.supreme.ui.screens.racing.upcoming.UpcomingTabFragment
+import com.triare.supreme.ui.screens.racing.previous.PreviousTabFragment
 
 class RacingPreviousFragment : Fragment(), RacingAdapter.OnItemClickListener {
 
@@ -27,7 +27,6 @@ class RacingPreviousFragment : Fragment(), RacingAdapter.OnItemClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_racing_previous, container, false)
     }
 
@@ -62,7 +61,7 @@ class RacingPreviousFragment : Fragment(), RacingAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(data: RacingDvo) {
-        val detailsFragment = UpcomingTabFragment.newInstance(data)
+        val detailsFragment = PreviousTabFragment.newInstance(data)
         requireActivity().supportFragmentManager
             .beginTransaction()
             .replace(R.id.nav_host_fragment, detailsFragment)

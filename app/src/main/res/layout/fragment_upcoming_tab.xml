@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="208dp"
         android:background="@drawable/bg"
         android:scaleType="fitXY"
         android:src="@drawable/gray_gradient"

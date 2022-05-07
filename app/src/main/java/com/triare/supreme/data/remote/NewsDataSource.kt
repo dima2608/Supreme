@@ -13,8 +13,31 @@ class NewsDataSource {
     private val storage = FirebaseStorage.getInstance()
     private val news = db.collection(NEWS_COLLECTION)
 
-    fun observeCities(onResult: (Result<List<NewsDvo>>) -> Unit) {
+    fun observeNews(onResult: (Result<List<NewsDvo>>) -> Unit) {
         news.addSnapshotListener { value, error ->
+            if (error != null) {
+                Log.w(TAG, "Listen failed.", error)
+                onResult(Result.failure(error))
+                return@addSnapshotListener
+            }
+
+            if (value != null) {
+                try {
+                    val news = value.toObjects(NewsDto::class.java)
+                    Log.d("NewsImg", news[0].title.orEmpty())
+                    onResult(Result.success(NewsMapper(news).map(storage)))
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    onResult(Result.failure(e))
+                }
+            } else {
+                Log.d(TAG, "Current data: null")
+            }
+        }
+    }
+
+    fun observeMediaNews(onResult: (Result<List<NewsDvo>>) -> Unit, circuitId: String) {
+        news.whereEqualTo("circuitId", circuitId).addSnapshotListener { value, error ->
             if (error != null) {
                 Log.w(TAG, "Listen failed.", error)
                 onResult(Result.failure(error))

@@ -133,4 +133,9 @@
         <item name="drawableRightCompat">@drawable/ic_arrow_right</item>
     </style>
 
+    <!-- img -->
+    <style name="Widget.App.Image.ShapeAppearance" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
 </resources>

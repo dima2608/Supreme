@@ -65,7 +65,7 @@ class CircuitTabFragment : Fragment() {
     }
 
     private fun observeUpdates() {
-        circuitViewModel.observeCircuits(dataRacing?.circuit!!)
+        dataRacing?.circuit?.let { circuitViewModel.observeCircuits(it) }
         circuitViewModel.circuitLiveData.observe(viewLifecycleOwner) {
             val circuit = it ?: return@observe
             title?.text = circuit.title

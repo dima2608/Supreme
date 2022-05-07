@@ -6,5 +6,6 @@ data class NewsDvo(
     val title: String,
     val date: String,
     val imgLink: StorageReference,
+    val subtitle: String,
     val link: String
 )

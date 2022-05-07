@@ -6,11 +6,21 @@
         <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/fragment_circuit_tab.xml" value="0.4" />
         <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/fragment_media_tab.xml" value="0.33" />
+        <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/fragment_news.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/fragment_overview.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/fragment_overview_tab.xml" value="0.33" />
+        <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/fragment_previous_tab.xml" value="0.3020833333333333" />
         <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/fragment_racing_pre_circuit.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/fragment_racing_previous.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/fragment_racing_upc_circuit_tab.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/fragment_racing_upc_media_tab.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/fragment_racing_upcoming_tab.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/fragment_upcoming_tab.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/item_media_news.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/item_media_video.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/item_news.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/item_podium.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/DraCode/Desktop/Triare/Supreme/app/src/main/res/layout/item_standings.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

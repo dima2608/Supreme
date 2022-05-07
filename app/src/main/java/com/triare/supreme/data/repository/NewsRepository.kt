@@ -8,7 +8,7 @@ class NewsRepository {
     private val newsDataSource = NewsDataSource()
 
     fun observeNews(onResult: (Result<List<NewsDvo>>) -> Unit) {
-        newsDataSource.observeCities(onResult)
+        newsDataSource.observeNews(onResult)
     }
 
 }

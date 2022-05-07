@@ -12,6 +12,7 @@ class NewsMapper(private val newsDto: List<NewsDto>) {
                 it.title.orEmpty(),
                 it.date.orEmpty(),
                 storage.getReferenceFromUrl(it.img!!),
+                it.subtitle.orEmpty(),
                 it.link.orEmpty()
             )
         }
