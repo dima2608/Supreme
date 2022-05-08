@@ -7,11 +7,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.triare.supreme.data.api.model.StandingsApiDto
 import com.triare.supreme.data.mapper.CircuitMapper
+import com.triare.supreme.data.mapper.OverviewMapper
 import com.triare.supreme.data.mapper.RacingMapper
 import com.triare.supreme.data.models.CircuitDto
 import com.triare.supreme.data.models.OverviewDto
 import com.triare.supreme.data.models.RaceDto
 import com.triare.supreme.ui.dvo.CircuitDvo
+import com.triare.supreme.ui.dvo.OverviewDvo
 import com.triare.supreme.ui.dvo.RacingDvo
 import java.util.*
 
@@ -77,10 +79,10 @@ class RacingDataSource {
         }
     }
 
-    fun observeOverview(onResult: (Result<CircuitDvo>) -> Unit, overviewRef: DocumentReference) {
+    fun observeOverview(onResult: (Result<OverviewDvo>) -> Unit, overviewRef: DocumentReference) {
         db.document(overviewRef.path).get().addOnSuccessListener { value ->
-            val circuit = value.toObject(OverviewDto::class.java)
-            onResult(Result.success(CircuitMapper(circuit).map(storage)))
+            val overview = value.toObject(OverviewDto::class.java)
+            onResult(Result.success(OverviewMapper(overview).map(storage)))
         }
     }
 

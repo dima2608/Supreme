@@ -7,27 +7,28 @@
     android:background="@color/pages_bg">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/icon_overview"
+        android:id="@+id/icon_item_overview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="-4dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="-4dp"
+        android:background="@color/dark_blue"
+        android:paddingTop="16dp"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@id/overview_constructor"
-        app:layout_constraintEnd_toStartOf="@id/overview_driver"
+        app:layout_constraintBottom_toBottomOf="@id/overview_item_constructor"
+        app:layout_constraintEnd_toStartOf="@id/overview_item_driver"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/overview_time"
+        app:layout_constraintTop_toTopOf="@+id/overview_item_time"
         app:shapeAppearance="@style/Widget.App.Image.ShapeAppearance"
         tools:srcCompat="@drawable/bg" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/overview_constructor"
+        android:id="@+id/overview_item_constructor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="16dp"
         android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
         android:textColor="@color/lighter_gray"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,43 +36,58 @@
         tools:text="Ferrari" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/overview_driver"
+        android:id="@+id/overview_item_driver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
-        app:layout_constraintBottom_toTopOf="@id/overview_constructor"
-        app:layout_constraintStart_toStartOf="@id/overview_constructor"
+        app:layout_constraintBottom_toTopOf="@id/overview_item_constructor"
+        app:layout_constraintStart_toStartOf="@id/overview_item_constructor"
         tools:text="Charles Leclerc" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/overview_time"
+        android:id="@+id/overview_item_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="16dp"
         android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
         android:textColor="@color/lighter_gray"
-        app:layout_constraintBottom_toTopOf="@id/overview_driver"
-        app:layout_constraintStart_toStartOf="@id/overview_driver"
+        app:layout_constraintBottom_toTopOf="@id/overview_item_driver"
+        app:layout_constraintStart_toStartOf="@id/overview_item_driver"
         tools:text="1:24.795" />
 
     <View
-        android:id="@+id/race_distance_divider"
+        android:id="@+id/overview_divider"
         style="@style/Divider"
         android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@id/overview_time"
-        app:layout_constraintStart_toEndOf="@id/overview_time"
-        app:layout_constraintTop_toTopOf="@id/overview_time" />
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="@id/overview_item_time"
+        app:layout_constraintStart_toEndOf="@id/overview_item_time"
+        app:layout_constraintTop_toTopOf="@id/overview_item_time" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/overview_pts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
+        android:paddingTop="16dp"
         android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
         android:textColor="@color/lighter_gray"
-        app:layout_constraintBottom_toBottomOf="@id/overview_time"
-        app:layout_constraintStart_toEndOf="@id/race_distance_divider"
-        app:layout_constraintTop_toTopOf="@id/overview_time"
+        app:layout_constraintBottom_toBottomOf="@id/overview_item_time"
+        app:layout_constraintStart_toEndOf="@id/overview_divider"
+        app:layout_constraintTop_toTopOf="@id/overview_item_time"
         tools:text="Lap 36" />
+
+    <ImageView
+        android:id="@+id/medal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/ic_icon_first" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

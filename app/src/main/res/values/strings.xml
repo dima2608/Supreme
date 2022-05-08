@@ -26,4 +26,5 @@
     <string name="circuit_length">Circuit length</string>
     <string name="podium">Podium</string>
     <string name="fastest_lap">Fastest lap</string>
+    <string name="video_from_race">Video from race</string>
 </resources>
